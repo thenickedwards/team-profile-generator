@@ -1,13 +1,13 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const employee = require('./lib/Employee');
-const manager = require('./lib/Manager');
-const engineer = require('./lib/Engineer');
-const intern = require('./lib/Intern');
+const employee = require('./lib/Employee.js')
+const manager = require('./lib/Manager.js');
+const engineer = require('./lib/Engineer.js');
+const intern = require('./lib/Intern.js')
 
 const allEmployees = [];
 
-const questions = [
+const managerQuestions = [
     {
         name: "managerName",
         type: "input",
@@ -30,12 +30,28 @@ const questions = [
     }
 ];
 
-function buildTeam() {
+function createManager() {
     inquirer
-        .prompt(questions)
+        .prompt(managerQuestions)
         .then(function(data) {
             console.log(data);
+            allEmployees.push(data);
+            console.log(allEmployees);
+            createTeamMember();
         })
+        // push mgr to allEmp array
+        // createTeamMember();
 }
 
-buildTeam();
+function createTeamMember() {
+    console.log("createTeamMember is running!")
+    // Inq prompt do you want to add a TM
+    // else, collect data
+    // push to array
+    // if no, writeFile
+}
+
+createManager();
+
+// src folder (page-template.js: generate team function, writeFile, returns html to index.js)
+// dist folder holds rendered html (create/append team.html, hardcoded team.css)
