@@ -1,12 +1,18 @@
+// Libraries
 const inquirer = require('inquirer');
 const fs = require('fs');
+
+// Superclass
 const employee = require('./lib/Employee.js')
+
+// Subclasses
 const manager = require('./lib/Manager.js');
 const engineer = require('./lib/Engineer.js');
 const intern = require('./lib/Intern.js')
 
 const allEmployees = [];
 
+// Questions Arrays for Inquirer
 const managerQuestions = [
     {
         name: "managerName",
@@ -29,18 +35,6 @@ const managerQuestions = [
         message: "What is this team manager's office number?"
     }
 ];
-
-function createManager() {
-    inquirer
-        .prompt(managerQuestions)
-        .then(function(data) {
-            // console.log(data);
-            allEmployees.push(data);
-            // console.log("Below is the allEmployees array.")
-            // console.log(allEmployees);
-            createTeamMember();
-        })
-}
 
 const engineerQuestions = [
     {
@@ -88,6 +82,20 @@ const internQuestions = [
     }
 ];
 
+// Begin by creating manager (one per team)
+function createManager() {
+    inquirer
+        .prompt(managerQuestions)
+        .then(function(data) {
+            // console.log(data);
+            allEmployees.push(data);
+            // console.log("Below is the allEmployees array.")
+            // console.log(allEmployees);
+            createTeamMember();
+        })
+}
+
+// Create additional team members or generate My Team page
 async function createTeamMember() {
     const response = await inquirer
     .prompt([{
@@ -119,15 +127,16 @@ async function createTeamMember() {
         })
     } else {
         console.log("We're all done!");
+        // if no, writeFile
     }
-
-    // Inq prompt do you want to add a TM
-    // else, collect data
-    // push to array
-    // if no, writeFile
 }
 
 createManager();
 
 // src folder (page-template.js: generate team function, writeFile, returns html to index.js)
 // dist folder holds rendered html (create/append team.html, hardcoded team.css)
+
+
+// create sample_myteam.html and sample_myteam.html as template for JS
+// writeFile function in myteampage-template.js
+// write tests
