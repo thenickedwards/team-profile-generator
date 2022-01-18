@@ -93,7 +93,7 @@ function createManager() {
         .prompt(managerQuestions)
         .then(function(data) {
             // console.log(data);
-            const newManager = new Manager(data);
+            const newManager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOfficeNo);
             allEmployees.push(newManager);
             // console.log("Below is the allEmployees array.")
             // console.log(allEmployees);
@@ -116,7 +116,7 @@ async function createTeamMember() {
             .prompt(engineerQuestions)
             .then(function(data) {
                 // console.log(data);
-                const newEngineer = new Engineer(data);
+                const newEngineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGithub);
                 allEmployees.push(newEngineer);
                 // console.log("Below is the allEmployees array.")
                 // console.log(allEmployees);
@@ -127,7 +127,7 @@ async function createTeamMember() {
             .prompt(internQuestions)
             .then(function(data) {
                 // console.log(data);
-                const newIntern = new Intern(data);
+                const newIntern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
                 allEmployees.push(newIntern);
                 // console.log("Below is the allEmployees array.")
                 // console.log(allEmployees);
@@ -146,9 +146,9 @@ async function createTeamMember() {
 }
 
 // To create blank HTML file
-function createNewHTML(fileName, allEmployeesStr) {
+function createNewHTML(fileName, data) {
     console.log("createHTML is running!");
-    fs.writeFile(fileName, allEmployeesStr, (err) =>
+    fs.writeFile(fileName, data, (err) =>
     err ? console.error(err) : console.log('My Team page generated! Check the "dist" folder and enjoy.'))
 }
 
