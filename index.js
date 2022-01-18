@@ -4,12 +4,16 @@ const fs = require('fs');
 const generateMyTeamPage = require('./src/generateMyTeamPage')
 
 // Superclass
-const employee = require('./lib/Employee.js')
+// const employee = require('./lib/Employee.js');
+const Employee = require('./lib/Employee.js');
 
 // Subclasses
-const manager = require('./lib/Manager.js');
-const engineer = require('./lib/Engineer.js');
-const intern = require('./lib/Intern.js')
+// const manager = require('./lib/Manager.js');
+// const engineer = require('./lib/Engineer.js');
+// const intern = require('./lib/Intern.js');
+const Manager = require('./lib/Manager.js');
+const Engineer = require('./lib/Engineer.js');
+const Intern = require('./lib/Intern.js');
 
 const allEmployees = [];
 
@@ -89,7 +93,8 @@ function createManager() {
         .prompt(managerQuestions)
         .then(function(data) {
             // console.log(data);
-            allEmployees.push(data);
+            const newManager = new Manager(data);
+            allEmployees.push(newManager);
             // console.log("Below is the allEmployees array.")
             // console.log(allEmployees);
             createTeamMember();
@@ -111,7 +116,8 @@ async function createTeamMember() {
             .prompt(engineerQuestions)
             .then(function(data) {
                 // console.log(data);
-                allEmployees.push(data);
+                const newEngineer = new Engineer(data);
+                allEmployees.push(newEngineer);
                 // console.log("Below is the allEmployees array.")
                 // console.log(allEmployees);
                 createTeamMember();
@@ -121,7 +127,8 @@ async function createTeamMember() {
             .prompt(internQuestions)
             .then(function(data) {
                 // console.log(data);
-                allEmployees.push(data);
+                const newIntern = new Intern(data);
+                allEmployees.push(newIntern);
                 // console.log("Below is the allEmployees array.")
                 // console.log(allEmployees);
                 createTeamMember();
@@ -131,9 +138,9 @@ async function createTeamMember() {
         console.log("That's the whole team!");
         console.log("Below is the allEmployees array.")
         console.log(allEmployees);
-        allEmployeesStr = JSON.stringify(allEmployees);
+        // allEmployeesStr = JSON.stringify(allEmployees);
         // console.log(JSON.stringify(allEmployees));
-        createNewHTML("./dist/myteam.html", generateMyTeamPage(allEmployeesStr));
+// createNewHTML("./dist/myteam.html", generateMyTeamPage(allEmployees));
         // console.log("Generating My Team page...")
     }
 }

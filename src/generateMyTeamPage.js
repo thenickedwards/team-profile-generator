@@ -28,18 +28,47 @@ const htmlTop =
   <!-- My Team cards & info -->
   <main style="display: flex; flex-flow: row wrap; justify-content: center;">`
 
-  const managerCard = 
-`   <div class="card text-white mb-3 mx-5" style="width: 15rem; background-color: #5FBFF9;">
-        <h4 class="card-header" style="border-bottom: none;">Firstname Lastname</h4>
+function generateManagerCard(person) {
+      return `\n   <div class="card text-white mb-3 mx-5" style="width: 15rem; background-color: #5FBFF9;">
+        <h4 class="card-header" style="border-bottom: none;">${person.name}</h4>
         <h5 class="card-header"><i class="fas fa-mug-hot"></i> Manager</h5>
             <div class="card">
             <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: <span>12345</span></li>
-                    <li class="list-group-item">Email: <span></span></li>
-                    <li class="list-group-item">Office #<span></span></li>
+                    <li class="list-group-item">ID: <span>${person.id}</span></li>
+                    <li class="list-group-item">Email: <span>${person.email}</span></li>
+                    <li class="list-group-item">Office #<span>${person.officeNumber}</span></li>
                 </ul>
     </div>
-</div>`
+</div>\n`
+}
+
+function generateEngineerCard(person) {
+  return `\n  <div class="card text-white mb-3 mx-5" style="width: 15rem; background-color: #5FBFF9;">
+      <h4 class="card-header" style="border-bottom: none;">${person.name}</h4>
+      <h5 class="card-header"><i class="fas fa-glasses"></i> Engineer</h5>
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">ID: <span>${person.id}</span></li>
+            <li class="list-group-item">Email: <span>${person.email}</span></li>
+            <li class="list-group-item">GitHub: <span>${person.github}</span></li>
+          </ul>
+        </div>
+  </div>\n`
+}
+
+function generateInternCard(person) {
+  return `\n  <div class="card text-white mb-3 mx-5" style="width: 15rem; background-color: #5FBFF9;">
+    <h4 class="card-header" style="border-bottom: none;">Duder Guyson</h4>
+    <h5 class="card-header"><i class="fas fa-user-graduate"></i> Intern</h5>
+      <div class="card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">ID: <span>45678</span></li>
+          <li class="list-group-item">Email: <span></span></li>
+          <li class="list-group-item">School: <span></span></li>
+        </ul>
+      </div>
+  </div>\n`
+}
 
 const htmlBottom = 
 `   </main>
@@ -49,13 +78,19 @@ const htmlBottom =
 
 
 
-function generateMyTeamPage(
-    // data
-) {
+function generateMyTeamPage(allEmployees) {
     console.log("generateMyTeamPage is running!");
-    fs.appendFile('./dist/myteam.html', `${htmlTop}\n${managerCard}\n${htmlBottom}`, (err) => 
-    err ? console.error(err) : console.log('generateMyTeamPage ran without error!')
-    )
+    let htmlString = htmlTop;
+    for (person of allEmployees) {
+        if (person.role === 'Manager') {
+            htmlString += generateManagerCard(person);
+        } else if (person.role === 'Engineer') {
+            htmlString += generateEngineerCard(person);
+        } else if (person.role === 'Intern') {
+            htmlString += generateInternCard(person);
+        }
+    }
+    console.log(htmlString);
 }
 
 module.exports = generateMyTeamPage;
