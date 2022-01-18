@@ -1,6 +1,7 @@
 // Libraries
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMyTeamPage = require('./src/generateMyTeamPage')
 
 // Superclass
 const employee = require('./lib/Employee.js')
@@ -115,7 +116,7 @@ async function createTeamMember() {
                 // console.log(allEmployees);
                 createTeamMember();
         })
-    } if (response.continue == 'Intern') {
+    } else if (response.continue == 'Intern') {
         inquirer
             .prompt(internQuestions)
             .then(function(data) {
@@ -126,10 +127,24 @@ async function createTeamMember() {
                 createTeamMember();
         })
     } else {
-        console.log("We're all done!");
         // if no, writeFile
+        console.log("That's the whole team!");
+        console.log("Below is the allEmployees array.")
+        console.log(allEmployees);
+        allEmployeesStr = JSON.stringify(allEmployees);
+        // console.log(JSON.stringify(allEmployees));
+        createNewHTML("./dist/myteam.html", generateMyTeamPage(allEmployeesStr));
+        // console.log("Generating My Team page...")
     }
 }
+
+// To create blank HTML file
+function createNewHTML(fileName, allEmployeesStr) {
+    console.log("createHTML is running!");
+    fs.writeFile(fileName, allEmployeesStr, (err) =>
+    err ? console.error(err) : console.log('My Team page generated! Check the "dist" folder and enjoy.'))
+}
+
 
 createManager();
 
@@ -138,5 +153,5 @@ createManager();
 
 
 // create sample_myteam.html and sample_myteam.html as template for JS
-// writeFile function in myteampage-template.js
+// generateMyTeam (writeFile) function in myteampage-template.js
 // write tests
