@@ -130,30 +130,30 @@ async function createTeamMember() {
                 createTeamMember();
         })
     } else {
-        // if no, writeFile
-        console.log("That's the whole team!");
-        console.log("Below is the allEmployees array.")
-        console.log(allEmployees);
+        // If no more team members, write html
+        console.log("Thatnks for providing the info of your team!");
+        // console.log("Below is the allEmployees array.")
+        // console.log(allEmployees);
         const fullHtml = generateMyTeamPage(allEmployees);
+        console.log("Generating My Team page...")
         createNewHTML("./dist/myteam.html", fullHtml);
-        // console.log("Generating My Team page...")
     }
 }
 
-// To create blank HTML file
+// To create HTML file
 function createNewHTML(fileName, data) {
     console.log("createHTML is running!");
     fs.writeFile(fileName, data, (err) =>
-    err ? console.error(err) : console.log('My Team page generated! Check the "dist" folder and enjoy.'))
+    err ? console.error(err) : console.log('My Team page generated! Check the "dist" folder and enjoy!'))
 }
 
 
 createManager();
 
-// src folder (page-template.js: generate team function, writeFile, returns html to index.js)
-// dist folder holds rendered html (create/append team.html, hardcoded team.css)
+// DONE src folder (page-template.js: generate team function, writeFile, returns html to index.js)
+// DONE dist folder holds rendered html (create/append team.html, hardcoded team.css)
 
 
-// create sample_myteam.html and sample_myteam.html as template for JS
-// generateMyTeam (writeFile) function in myteampage-template.js
+// DONE create sample_myteam.html and sample_myteam.html as template for JS
+// DONE generateMyTeam (writeFile) function in myteampage-template.js
 // write tests
