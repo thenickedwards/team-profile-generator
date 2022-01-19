@@ -33,12 +33,12 @@ const htmlTop =
 function generateManagerCard(person) {
       return `\n   <div class="card text-white mb-3 mx-5" style="width: 15rem; background-color: #5FBFF9;">
         <h4 class="card-header" style="border-bottom: none;">${person.name}</h4>
-        <h5 class="card-header"><i class="fas fa-mug-hot"></i> Manager</h5>
+        <h5 class="card-header"><i class="fas fa-mug-hot"></i>  ${person.getRole()}</h5>
             <div class="card">
             <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: <span>${person.id}</span></li>
                     <li class="list-group-item">Email: <a href="mailto:${person.email}">${person.email}</a></li>
-                    <li class="list-group-item">Office #<span>${person.officeNumber}</span></li>
+                    <li class="list-group-item">Office: <span>${person.officeNumber}</span></li>
                 </ul>
     </div>
 </div>\n`
@@ -47,7 +47,7 @@ function generateManagerCard(person) {
 function generateEngineerCard(person) {
   return `\n  <div class="card text-white mb-3 mx-5" style="width: 15rem; background-color: #5FBFF9;">
       <h4 class="card-header" style="border-bottom: none;">${person.name}</h4>
-      <h5 class="card-header"><i class="fas fa-glasses"></i> Engineer</h5>
+      <h5 class="card-header"><i class="fas fa-glasses"></i>  ${person.getRole()}</h5>
         <div class="card">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">ID: <span>${person.id}</span></li>
@@ -61,7 +61,7 @@ function generateEngineerCard(person) {
 function generateInternCard(person) {
   return `\n  <div class="card text-white mb-3 mx-5" style="width: 15rem; background-color: #5FBFF9;">
     <h4 class="card-header" style="border-bottom: none;">${person.name}</h4>
-    <h5 class="card-header"><i class="fas fa-user-graduate"></i> Intern</h5>
+    <h5 class="card-header"><i class="fas fa-user-graduate"></i>  ${person.getRole()}</h5>
       <div class="card">
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: <span>${person.id}</span></li>
