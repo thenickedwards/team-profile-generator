@@ -90,7 +90,9 @@ function generateMyTeamPage(allEmployees) {
             htmlString += generateInternCard(person);
         }
     }
-    console.log(htmlString);
+    htmlString += htmlBottom;
+    // console.log(htmlString);
+    return htmlString;
 }
 
 module.exports = generateMyTeamPage;

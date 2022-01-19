@@ -4,13 +4,9 @@ const fs = require('fs');
 const generateMyTeamPage = require('./src/generateMyTeamPage')
 
 // Superclass
-// const employee = require('./lib/Employee.js');
 const Employee = require('./lib/Employee.js');
 
 // Subclasses
-// const manager = require('./lib/Manager.js');
-// const engineer = require('./lib/Engineer.js');
-// const intern = require('./lib/Intern.js');
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
@@ -138,10 +134,8 @@ async function createTeamMember() {
         console.log("That's the whole team!");
         console.log("Below is the allEmployees array.")
         console.log(allEmployees);
-        // allEmployeesStr = JSON.stringify(allEmployees);
-        // console.log(JSON.stringify(allEmployees));
-        generateMyTeamPage(allEmployees);
-        createNewHTML("./dist/myteam.html", htmlString);
+        const fullHtml = generateMyTeamPage(allEmployees);
+        createNewHTML("./dist/myteam.html", fullHtml);
         // console.log("Generating My Team page...")
     }
 }
@@ -149,7 +143,7 @@ async function createTeamMember() {
 // To create blank HTML file
 function createNewHTML(fileName, data) {
     console.log("createHTML is running!");
-    fs.writeFile('myteam.html', htmlString, (err) =>
+    fs.writeFile(fileName, data, (err) =>
     err ? console.error(err) : console.log('My Team page generated! Check the "dist" folder and enjoy.'))
 }
 
