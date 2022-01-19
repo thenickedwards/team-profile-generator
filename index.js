@@ -140,7 +140,8 @@ async function createTeamMember() {
         console.log(allEmployees);
         // allEmployeesStr = JSON.stringify(allEmployees);
         // console.log(JSON.stringify(allEmployees));
-// createNewHTML("./dist/myteam.html", generateMyTeamPage(allEmployees));
+        generateMyTeamPage(allEmployees);
+        createNewHTML("./dist/myteam.html", htmlString);
         // console.log("Generating My Team page...")
     }
 }
@@ -148,7 +149,7 @@ async function createTeamMember() {
 // To create blank HTML file
 function createNewHTML(fileName, data) {
     console.log("createHTML is running!");
-    fs.writeFile(fileName, data, (err) =>
+    fs.writeFile('myteam.html', htmlString, (err) =>
     err ? console.error(err) : console.log('My Team page generated! Check the "dist" folder and enjoy.'))
 }
 

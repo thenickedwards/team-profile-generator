@@ -58,13 +58,13 @@ function generateEngineerCard(person) {
 
 function generateInternCard(person) {
   return `\n  <div class="card text-white mb-3 mx-5" style="width: 15rem; background-color: #5FBFF9;">
-    <h4 class="card-header" style="border-bottom: none;">Duder Guyson</h4>
+    <h4 class="card-header" style="border-bottom: none;">${person.name}</h4>
     <h5 class="card-header"><i class="fas fa-user-graduate"></i> Intern</h5>
       <div class="card">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">ID: <span>45678</span></li>
-          <li class="list-group-item">Email: <span></span></li>
-          <li class="list-group-item">School: <span></span></li>
+          <li class="list-group-item">ID: <span>${person.id}</span></li>
+          <li class="list-group-item">Email: <span>${person.email}</span></li>
+          <li class="list-group-item">School: <span>${person.school}</span></li>
         </ul>
       </div>
   </div>\n`
@@ -82,11 +82,11 @@ function generateMyTeamPage(allEmployees) {
     console.log("generateMyTeamPage is running!");
     let htmlString = htmlTop;
     for (person of allEmployees) {
-        if (person.role === 'Manager') {
+        if (person.getRole() === 'Manager') {
             htmlString += generateManagerCard(person);
-        } else if (person.role === 'Engineer') {
+        } else if (person.getRole() === 'Engineer') {
             htmlString += generateEngineerCard(person);
-        } else if (person.role === 'Intern') {
+        } else if (person.getRole() === 'Intern') {
             htmlString += generateInternCard(person);
         }
     }
