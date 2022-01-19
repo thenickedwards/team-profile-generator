@@ -1,3 +1,4 @@
+// HTML head, styling, header
 const htmlTop =
 `<!DOCTYPE html>
 <html lang="en">
@@ -28,6 +29,7 @@ const htmlTop =
   <!-- My Team cards & info -->
   <main style="display: flex; flex-flow: row wrap; justify-content: center;">`
 
+// Template literals for various car types
 function generateManagerCard(person) {
       return `\n   <div class="card text-white mb-3 mx-5" style="width: 15rem; background-color: #5FBFF9;">
         <h4 class="card-header" style="border-bottom: none;">${person.name}</h4>
@@ -70,14 +72,14 @@ function generateInternCard(person) {
   </div>\n`
 }
 
+// HTML footer
 const htmlBottom = 
 `   </main>
 
 </body>
 </html>`
 
-
-
+// Converts array of employee objects and creates corresponding html cards
 function generateMyTeamPage(allEmployees) {
     console.log("generateMyTeamPage is running!");
     let htmlString = htmlTop;
