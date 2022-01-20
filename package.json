@@ -4,7 +4,8 @@
   "description": "Homework 10 Object - Oriented Programming: Team Profile Generator",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "myteam": "node index.js"
   },
   "repository": {
     "type": "git",

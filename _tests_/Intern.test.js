@@ -1,4 +1,3 @@
-const Engineer = require('../lib/Engineer');
 const Intern = require('../lib/Intern');
 
 describe("Intern", () => {
@@ -6,7 +5,7 @@ describe("Intern", () => {
     const name = "Nick Edwards";
     const id = 123;
     const email = "nick@test.com";
-    const school = "Univ of Washington"
+    const school = "WWU"
 
     const testIntern = new Intern(name, id, email, school)
 

@@ -18,9 +18,13 @@ Team Profile Generator code written per acceptance criteria in [W10-hw_readme.md
 URL for GitHub repo: https://github.com/thenickedwards/team-profile-generator
 
 ## Demo Videos
-![This video demonstrates how to clone repo, install dependencies, and use this README generator.](https://watch.screencastify.com/v/A2sW3lqpkhRRmvKY2H7B)
+![This video demonstrates how to clone repo and install dependencies.](https://tinyurl.com/yak65c98)
 
-If you encounter any difficulty with the screencastify link above, there are mp4 and webm video files in the repo or you can use this link to the video in my Google Drive: [https://drive.google.com/file/d/1jIMywy9jxhm8zK6Pv2GPztcIyaX4DLUx/view](https://drive.google.com/file/d/1jIMywy9jxhm8zK6Pv2GPztcIyaX4DLUx/view)
+![This video demonstrates testing of this application using Jest.](https://tinyurl.com/y9vnsrfy)
+
+![This video demonstrates how to use this application.]()
+
+If you encounter any difficulty with the Awesome Screenshot link above, there are mp4 video files in the repo in the demo videos folder.
 
 The README.md created from this demo can be found at [sample_README.md](sample_README.md)
 
