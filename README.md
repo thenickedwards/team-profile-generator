@@ -22,11 +22,11 @@ URL for GitHub repo: https://github.com/thenickedwards/team-profile-generator
 
 ![This video demonstrates testing of this application using Jest.](https://tinyurl.com/y9vnsrfy)
 
-![This video demonstrates how to use this application.]()
+![This video demonstrates how to use this application.](https://tinyurl.com/yc3x6r9d)
 
 If you encounter any difficulty with the Awesome Screenshot link above, there are mp4 video files in the repo in the demo videos folder.
 
-The README.md created from this demo can be found at [sample_README.md](sample_README.md)
+The sample myteam.html created from this demo can be found at [/src/sample_myteam.html](/src/sample_myteam.html)
 
 Thank you for reading the readme!
 
