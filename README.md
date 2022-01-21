@@ -34,7 +34,7 @@ https://user-images.githubusercontent.com/92474821/150442295-1fc37ea2-baeb-46f0-
 
 
 
-If you encounter any difficulty with the links above, there are mp4 video files in the repo in the demo videos folder.
+If you encounter any difficulty with the embedded videos or Awesome Screenshot links above, there are mp4 video files in the repo in the demo videos folder.
 
 The sample myteam.html created from this demo can be found at [/src/sample_myteam.html](/src/sample_myteam.html)
 
