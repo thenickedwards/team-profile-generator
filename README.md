@@ -19,19 +19,22 @@ URL for GitHub repo: https://github.com/thenickedwards/team-profile-generator
 
 ## Demo Videos
 This video demonstrates how to clone repo and install dependencies (also found at https://tinyurl.com/yak65c98).
+
 https://user-images.githubusercontent.com/92474821/150442081-0b78759a-3fbc-4ed2-9a09-bb9d790931e0.mp4
 
 
 This video demonstrates testing of this application using Jest (also found at https://tinyurl.com/y9vnsrfy).
+
 https://user-images.githubusercontent.com/92474821/150442257-817de245-b18f-467a-8bab-2aa8ade54aa6.mp4
 
 
 This video demonstrates how to use this application (also found at https://tinyurl.com/yc3x6r9d).
+
 https://user-images.githubusercontent.com/92474821/150442295-1fc37ea2-baeb-46f0-9489-67392337ebce.mp4
 
 
 
-If you encounter any difficulty with the embedded videos or Awesome Screenshot links above, there are mp4 video files in the repo in the demo videos folder.
+If you encounter any difficulty with the links above, there are mp4 video files in the repo in the demo videos folder.
 
 The sample myteam.html created from this demo can be found at [/src/sample_myteam.html](/src/sample_myteam.html)
 
