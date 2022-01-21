@@ -33,4 +33,10 @@ describe("Manager", () => {
         });
     });
 
+    describe("get officeNumber", () => {
+        it("should return officeNumber", () => {
+            expect(testManager.officeNumber).toBe(officeNumber);
+        });
+    });
+
 });

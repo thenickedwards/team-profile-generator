@@ -149,11 +149,3 @@ function createNewHTML(fileName, data) {
 
 
 createManager();
-
-// DONE src folder (page-template.js: generate team function, writeFile, returns html to index.js)
-// DONE dist folder holds rendered html (create/append team.html, hardcoded team.css)
-
-
-// DONE create sample_myteam.html and sample_myteam.html as template for JS
-// DONE generateMyTeam (writeFile) function in myteampage-template.js
-// write tests

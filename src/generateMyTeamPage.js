@@ -29,7 +29,7 @@ const htmlTop =
   <!-- My Team cards & info -->
   <main style="display: flex; flex-flow: row wrap; justify-content: center;">`
 
-// Template literals for various car types
+// Template literals for various card types
 function generateManagerCard(person) {
       return `\n   <div class="card text-white mb-3 mx-5" style="width: 15rem; background-color: #5FBFF9;">
         <h4 class="card-header" style="border-bottom: none;">${person.name}</h4>
