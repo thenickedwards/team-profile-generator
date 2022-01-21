@@ -19,6 +19,7 @@ URL for GitHub repo: https://github.com/thenickedwards/team-profile-generator
 
 ## Demo Videos
 ![This video demonstrates how to clone repo and install dependencies.](https://tinyurl.com/yak65c98)
+[![This video demonstrates how to clone repo and install dependencies.]](https://tinyurl.com/yak65c98)
 
 ![This video demonstrates testing of this application using Jest.](https://tinyurl.com/y9vnsrfy)
 
